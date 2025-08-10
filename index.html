@@ -8,20 +8,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body{margin:0;font-family:Inter,system-ui,sans-serif;background:#eef3f6;color:#0b1721;line-height:1.55}
+    :root{
+      --navy:#0f2d47; --sky:#b8c9d6; --mist:#eef3f6; --sand:#f6f3ee; --ink:#0b1721; --link:#14385b; --link-hover:#0d2a45;
+      --radius:18px; --shadow:0 10px 30px rgba(15,45,71,.12)
+    }
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--mist);color:var(--ink);line-height:1.55}
     .container{max-width:1050px;margin:0 auto;padding:24px}
     header{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;padding:28px 0 14px}
-    .logo{width:84px;height:84px;border-radius:16px;overflow:hidden;display:grid;place-items:center;background:#fff;box-shadow:0 10px 30px rgba(15,45,71,.12)}
+    .logo{width:84px;height:84px;border-radius:16px;overflow:hidden;display:grid;place-items:center;background:#fff;box-shadow:var(--shadow)}
     .logo img{max-width:90%;height:auto;display:block}
-    h1{margin:0;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(28px,4vw,40px);color:#0f2d47}
-    p{margin:6px 0 0;color:#334}
+    h1{margin:0;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(28px,4vw,40px);color:var(--navy)}
+    header p{margin:6px 0 0;color:#334}
+
+    .disclosure{background:linear-gradient(180deg, var(--sand), #fff);border:1px solid #e8ecef;color:#374150;padding:10px 14px;border-radius:12px;margin:12px auto 24px;max-width:950px;font-size:.92rem}
+    .disclosure strong{color:var(--navy)}
+
+    /* Posts grid */
+    .posts{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    article.card{grid-column:span 12;background:var(--sand);border:1px solid #e8ecef;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;position:relative;overflow:hidden}
+    @media (min-width:680px){article.card{grid-column:span 6}}
+    @media (min-width:1040px){article.card{grid-column:span 4}}
+    .card h2{margin:2px 0 8px;font-family:"DM Serif Display", Georgia, serif;color:var(--navy);font-size:1.28rem}
+    .meta{font-size:.85rem;color:#5a6b7a;margin-bottom:8px}
+    .card p{margin:0 0 12px;color:#334}
+    .btn{display:inline-block;text-decoration:none;background:var(--link);color:#fff;padding:10px 14px;border-radius:12px;font-weight:600;border:1px solid #0b2744;transition:transform .04s ease, background .15s ease}
+    .btn:hover{background:var(--link-hover);transform:translateY(-1px)}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#e8f0f6;border:1px solid #d3e1eb;color:#27465f;font-size:.82rem;margin:0 8px 8px 0}
+    .card::after{content:""; position:absolute; right:-32px; top:-32px; width:140px; height:140px; opacity:.12; background:radial-gradient(circle at 40% 40%, var(--sky), transparent 60%); border-radius:50%; filter:blur(1px)}
+
+    footer{margin:40px 0 60px;color:#4a5967;text-align:center}
+    footer a{color:var(--link)}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">
-        <!-- Load logo directly from root since it's in same folder as index.html -->
         <img src="roots.png" alt="Roots, Home & Roam logo">
       </div>
       <div>
@@ -29,6 +51,40 @@
         <p>Curated finds for a cozy home and tiny‑trailer adventures.</p>
       </div>
     </header>
+
+    <p class="disclosure"><strong>Heads up:</strong> Some outbound links are affiliate links, which means I may earn a commission if you buy through them — at no extra cost to you. I only share things I actually use or want to.</p>
+
+    <!-- Latest posts -->
+    <section aria-label="Latest posts" class="posts">
+      <article class="card">
+        <h2>Tiny Trailer Kitchen Setup (Small Space, Big Payoff)</h2>
+        <div class="meta">Aug 10, 2025 • 5‑minute read</div>
+        <p>A compact, no‑nonsense kitchen kit that makes campsite cooking painless. Links include utensils, collapsible prep gear, and a burner that doesn’t sputter.</p>
+        <p><a class="btn" href="tiny-trailer-kitchen.html">Read the post</a></p>
+        <div><span class="tag">camp cooking</span><span class="tag">storage</span><span class="tag">tiny trailer</span></div>
+      </article>
+
+      <article class="card">
+        <h2>Cozy Reading Nook: Lamp, Throw, Chair — Done</h2>
+        <div class="meta">Aug 10, 2025 • 3‑minute read</div>
+        <p>The quick formula for instant‑cozy vibes, plus budget + splurge picks. Yes, the lamp matters more than you think.</p>
+        <p><a class="btn" href="reading-nook-quick-build.html">Read the post</a></p>
+        <div><span class="tag">home</span><span class="tag">lighting</span><span class="tag">textiles</span></div>
+      </article>
+
+      <article class="card">
+        <h2>Camp Comforts that Actually Fit in a Tiny Trailer</h2>
+        <div class="meta">Aug 10, 2025 • 4‑minute read</div>
+        <p>Sleep warmer, sit softer, pack smarter. A short list with links to things that don’t eat your storage.</p>
+        <p><a class="btn" href="camp-comforts-pack-light.html">Read the post</a></p>
+        <div><span class="tag">sleep</span><span class="tag">heat</span><span class="tag">multi‑use</span></div>
+      </article>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Roots, Home & Roam • Built with ♥ on GitHub Pages</p>
+    </footer>
   </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
