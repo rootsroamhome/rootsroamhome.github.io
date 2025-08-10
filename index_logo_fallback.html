@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roots, Home & Roam — Finds for Home + Tiny Adventures</title>
+  <meta name="description" content="Curated shopping lists and recommendations for cozy homes and tiny trailer adventures. Roots, Home & Roam is reader-supported; some links are affiliate links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0f2d47;
+      --navy-ink:#14385b;
+      --sky:#b8c9d6;
+      --mist:#eef3f6;
+      --sand:#f6f3ee;
+      --ink:#0b1721;
+      --link:#14385b;
+      --link-hover:#0d2a45;
+      --accent:#5c7f99;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(15,45,71,.12);
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:radial-gradient(1200px 800px at 110% -10%, rgba(20,56,91,.08), transparent 60%),
+                 radial-gradient(900px 600px at -10% 110%, rgba(20,56,91,.06), transparent 60%),
+                 var(--mist);
+      line-height:1.55;
+    }
+    .container{max-width:1050px;margin:0 auto;padding:24px}
+    header{
+      display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
+      padding:28px 0 14px;
+    }
+    .logo{
+      width:84px;height:84px;border-radius:16px;overflow:hidden;display:grid;place-items:center;background:#fff;box-shadow:var(--shadow);
+    }
+    .logo img{max-width:90%;height:auto;display:block}
+    .brand h1{margin:0;font-family:"DM Serif Display", Georgia, serif;font-size:clamp(28px, 4vw, 40px);letter-spacing:.3px;color:var(--navy)}
+    .brand p{margin:6px 0 0;color:#334;opacity:.9}
+    .disclosure{background:linear-gradient(180deg, var(--sand), #fff);border:1px solid #e8ecef;color:#374150;padding:10px 14px;border-radius:12px;margin:10px auto 22px;max-width:950px;font-size:.92rem}
+    .disclosure strong{color:var(--navy)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{
+      grid-column:span 12; background:var(--sand); border:1px solid #e8ecef; border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:18px 18px 14px; position:relative; overflow:hidden;
+    }
+    @media (min-width:680px){.card{grid-column:span 6}}
+    @media (min-width:1040px){.card{grid-column:span 4}}
+    .card h2{margin:4px 0 10px;font-family:"DM Serif Display", Georgia, serif;color:var(--navy);font-size:1.35rem}
+    .card p{margin:0 0 12px;color:#334}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#e8f0f6;border:1px solid #d3e1eb;color:#27465f;font-size:.82rem;margin:0 8px 8px 0}
+    .btn{display:inline-block;text-decoration:none;background:var(--link);color:#fff;padding:10px 14px;border-radius:12px;font-weight:600;border:1px solid #0b2744;transition:transform .04s ease, background .15s ease}
+    .btn:hover{background:var(--link-hover);transform:translateY(-1px)}
+    .btn.secondary{background:#fff;color:var(--link);border-color:#cfd9e1}
+    footer{margin:40px 0 60px;color:#4a5967;text-align:center}
+    footer a{color:var(--link)}
+    .card::after{
+      content:""; position:absolute; right:-32px; top:-32px; width:140px; height:140px; opacity:.12;
+      background:radial-gradient(circle at 40% 40%, var(--sky), transparent 60%);
+      border-radius:50%; filter:blur(1px);
+    }
+    .hero{
+      margin:8px auto 22px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;
+    }
+    .hero .tagline{font-size:1.02rem; background:#fff; border:1px solid #e8ecef; padding:10px 14px; border-radius:12px; color:#2d3b47}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <!-- Try assets/roots-logo.png first, then fall back to roots.png at the repo root -->
+        <img src="assets/roots-logo.png" alt="Roots, Home & Roam logo" onerror="this.onerror=null;this.src='roots.png';" />
+      </div>
+      <div class="brand">
+        <h1>Roots, Home & Roam</h1>
+        <p>Curated finds for a cozy home and tiny-trailer adventures.</p>
+      </div>
+    </header>
+
+    <div class="hero">
+      <span class="tagline">Built simply with GitHub Pages — click a list to shop.</span>
+    </div>
+
+    <p class="disclosure"><strong>Heads up:</strong> This page uses affiliate links, which means I may earn a commission if you purchase through them — at no extra cost to you. I only recommend gear and goods I genuinely like.</p>
+
+    <main class="grid" aria-label="Affiliate lists">
+      <section class="card" aria-labelledby="camping-list">
+        <h2 id="camping-list">Tiny Trailer Essentials</h2>
+        <p>Space-saving gear that punches above its weight.</p>
+        <div>
+          <span class="chip">12V power</span>
+          <span class="chip">storage</span>
+          <span class="chip">multi-use</span>
+        </div>
+        <p>
+          <a class="btn" href="https://www.amazon.com/shop/YOUR-STORE/idea-list/ABC123" target="_blank" rel="nofollow sponsored">Open the List</a>
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="kitchen-list">
+        <h2 id="kitchen-list">Cozy Kitchen Must‑Haves</h2>
+        <p>Weeknight heroes and weekend comfort — all killer, no filler.</p>
+        <div>
+          <span class="chip">prep</span>
+          <span class="chip">storage</span>
+          <span class="chip">serve</span>
+        </div>
+        <p>
+          <a class="btn" href="https://www.amazon.com/shop/YOUR-STORE/idea-list/DEF456" target="_blank" rel="nofollow sponsored">Open the List</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Roots, Home & Roam • Built with ♥ on GitHub Pages</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
